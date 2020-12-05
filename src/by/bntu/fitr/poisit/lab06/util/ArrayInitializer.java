@@ -6,6 +6,7 @@ import com.sun.istack.internal.NotNull;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ArrayInitializer {
@@ -38,5 +39,19 @@ public class ArrayInitializer {
             e.printStackTrace();
         }
 
+    }
+
+    public void initializeRandomly(@NotNull int[] array, int min, int max){
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt()%(max - min) + min;
+        }
+    }
+
+    public void initializeRandomly(@NotNull double[] array, double min, double max){
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextDouble()%(max - min) + min;
+        }
     }
 }
