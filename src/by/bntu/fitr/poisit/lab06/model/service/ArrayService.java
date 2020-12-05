@@ -29,4 +29,32 @@ public class ArrayService {
         }
         return multiply;
     }
+
+    public int rfind(int[] array, int element) {
+        int i = 0;
+        for (int j = 0; j < array.length; j++) {
+            if (array[j] == element) {
+                i = j;
+            }
+        }
+        return i;
+    }
+
+    public int calculateSumAllPositive(int[] array) {
+        int sum = 0;
+        for (int element : array) {
+            if (element > 0) {
+                sum += element;
+            }
+        }
+        return sum;
+    }
+
+    public int calculateSumAfterLast(int[] array, int lastElement) {
+        int sum = 0;
+        for (int i = rfind(array, lastElement); i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
+    }
 }
