@@ -31,13 +31,12 @@ public class ArrayService {
     }
 
     public int rfind(int[] array, int element) {
-        int i = -1;
-        for (int j = 0; j < array.length; j++) {
+        for (int j = array.length - 1; j >= 0; j--) {
             if (array[j] == element) {
-                i = j;
+                return j;
             }
         }
-        return i;
+        return -1;
     }
 
     public int calculateSumAllPositive(int[] array) {
