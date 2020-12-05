@@ -31,7 +31,7 @@ public class ArrayService {
     }
 
     public int rfind(int[] array, int element) {
-        int i = 0;
+        int i = -1;
         for (int j = 0; j < array.length; j++) {
             if (array[j] == element) {
                 i = j;
