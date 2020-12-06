@@ -8,7 +8,7 @@ public class ArrayService {
     public int findMaxAbsIndex(@NotNull double[] array) {
         int maxAbs = 0;
         for (int i = 1; i < array.length; i++) {
-            if (Math.abs(array[i]) < Math.abs(array[maxAbs])) {
+            if (Math.abs(array[i]) > Math.abs(array[maxAbs])) {
                 maxAbs = i;
             }
         }
@@ -25,7 +25,7 @@ public class ArrayService {
         return count;
     }
 
-    public double calculateMultiplyAfterBiggest(@NotNull double[] array) {
+    public double calculateMultiplyAfterBiggestAbs(@NotNull double[] array) {
         double multiply = 1;
         int max = findMaxAbsIndex(array);
         for (int i = max + 1; i < array.length; i++) {
