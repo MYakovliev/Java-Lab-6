@@ -62,8 +62,8 @@ public class ArrayService {
     }
 
     public int calculateQuantityInRange(@NotNull double[] array, double a, double b) throws InvalidRangeException {
-        if (b > a) {
-            throw new InvalidRangeException("b is greater than a");
+        if (b < a) {
+            throw new InvalidRangeException("b is less than a");
         }
         int counter = 0;
         for (double element : array) {
