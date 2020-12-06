@@ -1,5 +1,6 @@
 package by.bntu.fitr.poisit.lab06.model.service;
 
+import by.bntu.fitr.poisit.lab06.exception.InvalidRangeException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -58,10 +59,19 @@ class ArrayServiceTest {
 
     @Test
     void calculateQuantityInRange1() {
-
+        int expected = 4;
+        try {
+            int actual = service.calculateQuantityInRange(
+                    new double[]{5.2 , 3.8, 1.2, 5.5, 13.3, 24.2}, 1.2, 5.5);
+        } catch (InvalidRangeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test
-    void calculateQuantityInRange2() {
+    void calculateQuantityInRange2()  {
+        Throwable thrown = assertThrows(InvalidRangeException.class, () -> {
+            service.calculateQuantityInRange(new double[]{1}, 5.5, 1.1);
+        });
     }
 }
