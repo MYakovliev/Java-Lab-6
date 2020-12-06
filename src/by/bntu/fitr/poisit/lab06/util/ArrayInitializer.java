@@ -13,14 +13,6 @@ public class ArrayInitializer {
     private static final String DEFAULT_FILENAME_INT = ".\\data\\data.txt";
     private static final String DEFAULT_FILENAME_DOUBLE = ".\\data\\data1.txt";
 
-    public static void main(String[] args) {
-        try {
-            new ArrayInitializer().initializeFromFile(new double[8], "");
-        } catch (NotEnoughDataException e){
-            e.printStackTrace();
-        }
-    }
-
     public void initializeFromFile(@NotNull int[] array, String filename) throws NotEnoughDataException {
         int i = 0;
         try (Scanner scanner = new Scanner(new File(filename))){
@@ -34,8 +26,6 @@ public class ArrayInitializer {
         } catch (FileNotFoundException e){
             initializeFromFile(array, DEFAULT_FILENAME_INT);
         }
-
-
     }
 
     public void initializeFromFile(@NotNull double[] array, String filename) throws NotEnoughDataException {
