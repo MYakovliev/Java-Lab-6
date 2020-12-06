@@ -1,27 +1,27 @@
 package by.bntu.fitr.poisit.lab06.model.service;
 
 public class ArrayService {
-    public int findMaxAbsIndex(double[] array){
+    public int findMaxAbsIndex(double[] array) {
         int maxAbs = 0;
         for (int i = 1; i < array.length; i++) {
-            if (Math.abs(array[i]) < Math.abs(array[maxAbs])){
+            if (Math.abs(array[i]) < Math.abs(array[maxAbs])) {
                 maxAbs = i;
             }
         }
         return maxAbs;
     }
 
-    public int calculateAmountThatMore(double[] array, double number){
+    public int calculateAmountThatMore(double[] array, double number) {
         int count = 0;
-        for (double element: array) {
-            if(element > number) {
+        for (double element : array) {
+            if (element > number) {
                 count++;
             }
         }
         return count;
     }
 
-    public double calculateMultiplyAfterBiggest(double[] array){
+    public double calculateMultiplyAfterBiggest(double[] array) {
         double multiply = 1;
         int max = findMaxAbsIndex(array);
         for (int i = max + 1; i < array.length; i++) {
@@ -51,7 +51,7 @@ public class ArrayService {
 
     public int calculateSumAfterLast(int[] array, int lastElement) {
         int sum = 0;
-        for (int i = rfind(array, lastElement); i < array.length; i++) {
+        for (int i = rfind(array, lastElement) + 1; i < array.length; i++) {
             sum += array[i];
         }
         return sum;
