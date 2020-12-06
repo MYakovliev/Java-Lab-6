@@ -15,69 +15,69 @@ public class ArrayInitializer {
 
     public void initializeFromFile(@NotNull int[] array, String filename) throws NotEnoughDataException {
         int i = 0;
-        try (Scanner scanner = new Scanner(new File(filename))){
-            while(scanner.hasNextInt() && i < array.length ){
+        try (Scanner scanner = new Scanner(new File(filename))) {
+            while (scanner.hasNextInt() && i < array.length) {
                 array[i] = scanner.nextInt();
                 i++;
             }
-            if (i < array.length){
+            if (i < array.length) {
                 throw new NotEnoughDataException("not enough data in " + filename);
             }
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             initializeFromFile(array, DEFAULT_FILENAME_INT);
         }
     }
 
     public void initializeFromFile(@NotNull double[] array, String filename) throws NotEnoughDataException {
         int i = 0;
-        try (Scanner scanner = new Scanner(new File(filename))){
-            while(scanner.hasNextDouble() && i < array.length ){
+        try (Scanner scanner = new Scanner(new File(filename))) {
+            while (scanner.hasNextDouble() && i < array.length) {
                 array[i] = scanner.nextDouble();
                 i++;
             }
-            if (i < array.length){
+            if (i < array.length) {
                 throw new NotEnoughDataException("not enough data in " + filename);
             }
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             initializeFromFile(array, DEFAULT_FILENAME_DOUBLE);
         }
     }
 
-    public void initializeFromConsole(@NotNull int[] array){
+    public void initializeFromConsole(@NotNull int[] array) {
         int i = 0;
-        try (Scanner scanner = new Scanner(System.in)){
-            while(i < array.length ){
+        try (Scanner scanner = new Scanner(System.in)) {
+            while (i < array.length) {
                 array[i] = scanner.nextInt();
                 i++;
             }
-        } catch (InputMismatchException e){
+        } catch (InputMismatchException e) {
             e.printStackTrace();
         }
     }
 
-    public void initializeFromConsole(@NotNull double[] array){
+    public void initializeFromConsole(@NotNull double[] array) {
         int i = 0;
-        try (Scanner scanner = new Scanner(System.in)){
-            while(i < array.length ){
+        try (Scanner scanner = new Scanner(System.in)) {
+            while (i < array.length) {
                 array[i] = scanner.nextDouble();
                 i++;
             }
-        } catch (InputMismatchException e){
+        } catch (InputMismatchException e) {
             e.printStackTrace();
         }
     }
 
-    public void initializeRandomly(@NotNull int[] array, int min, int max){
+    public void initializeRandomly(@NotNull int[] array, int min, int max) {
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt()%(max - min) + min;
+            array[i] = random.nextInt() % (max - min) + min;
         }
     }
 
-    public void initializeRandomly(@NotNull double[] array, double min, double max){
+    public void initializeRandomly(@NotNull double[] array, double min, double max) {
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextDouble()%(max - min) + min;
+            array[i] = random.nextDouble() % (max - min) + min;
         }
     }
 }

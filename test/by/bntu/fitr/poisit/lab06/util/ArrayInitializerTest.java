@@ -14,7 +14,7 @@ class ArrayInitializerTest {
         int[] actual = new int[7];
         try {
             arrayInitializer.initializeFromFile(actual, "");
-        } catch (NotEnoughDataException e){
+        } catch (NotEnoughDataException e) {
             fail(e.getMessage());
         }
         assertArrayEquals(actual, expected);
@@ -26,7 +26,7 @@ class ArrayInitializerTest {
         double[] actual = new double[7];
         try {
             arrayInitializer.initializeFromFile(actual, "");
-        } catch (NotEnoughDataException e){
+        } catch (NotEnoughDataException e) {
             fail(e.getMessage());
         }
         assertArrayEquals(actual, expected);

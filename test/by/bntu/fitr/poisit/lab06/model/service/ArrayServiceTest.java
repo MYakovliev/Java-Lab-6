@@ -60,8 +60,7 @@ class ArrayServiceTest {
     @Test
     void rfind() {
         int expected = 5;
-        int actual = service.rfind(new int[]{5,1,3,4,1,1,6}, 1);
-
+        int actual = service.rfind(new int[]{5, 1, 3, 4, 1, 1, 6}, 1);
         assertEquals(expected, actual);
     }
 
@@ -69,7 +68,6 @@ class ArrayServiceTest {
     void calculateSumAllPositive1() {
         int expected = 25;
         int actual = service.calculateSumAllPositive(new int[]{-5, 2, 13, 0, 10, -2, -125});
-
         assertEquals(expected, actual);
     }
 
@@ -77,7 +75,6 @@ class ArrayServiceTest {
     void calculateSumAllPositive2() {
         int expected = 0;
         int actual = service.calculateSumAllPositive(new int[]{-5, -2, -13, 0, -10, -2, -125});
-
         assertEquals(expected, actual);
     }
 
@@ -85,7 +82,6 @@ class ArrayServiceTest {
     void calculateSumAfterLast1() {
         int expected = 13;
         int actual = service.calculateSumAfterLast(new int[]{24, 0, 123, 1, 0, 5, 6, 2}, 0);
-
         assertEquals(expected, actual);
     }
 
@@ -93,7 +89,6 @@ class ArrayServiceTest {
     void calculateSumAfterLast2() {
         int expected = 0;
         int actual = service.calculateSumAfterLast(new int[]{2, 0, 123, 1, 0, 5, 6, 2}, 2);
-
         assertEquals(expected, actual);
     }
 
@@ -102,7 +97,7 @@ class ArrayServiceTest {
         int expected = 4;
         try {
             int actual = service.calculateQuantityInRange(
-                    new double[]{5.2 , 3.8, 1.2, 5.5, 13.3, 24.2}, 1.2, 5.5);
+                    new double[]{5.2, 3.8, 1.2, 5.5, 13.3, 24.2}, 1.2, 5.5);
             assertEquals(expected, actual);
         } catch (InvalidRangeException e) {
             fail(e.getMessage());
@@ -110,7 +105,7 @@ class ArrayServiceTest {
     }
 
     @Test
-    void calculateQuantityInRange2()  {
+    void calculateQuantityInRange2() {
         assertThrows(InvalidRangeException.class, () ->
                 service.calculateQuantityInRange(new double[]{1}, 5.5, 1.1));
     }
