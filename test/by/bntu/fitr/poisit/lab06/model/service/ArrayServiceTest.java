@@ -111,7 +111,7 @@ class ArrayServiceTest {
 
     @Test
     void calculateQuantityInRange2()  {
-        Throwable thrown = assertThrows(InvalidRangeException.class, () ->
+        assertThrows(InvalidRangeException.class, () ->
                 service.calculateQuantityInRange(new double[]{1}, 5.5, 1.1));
     }
 }
