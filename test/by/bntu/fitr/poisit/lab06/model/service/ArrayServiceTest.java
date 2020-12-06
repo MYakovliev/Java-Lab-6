@@ -23,6 +23,10 @@ class ArrayServiceTest {
 
     @Test
     void rfind() {
+        int expected = 5;
+        int actual = service.rfind(new int[]{5,1,3,4,1,1,6}, 1);
+
+        assertEquals(5, actual);
     }
 
     @Test
