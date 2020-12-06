@@ -55,4 +55,13 @@ class ArrayServiceTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void calculateQuantityInRange1() {
+
+    }
+
+    @Test
+    void calculateQuantityInRange2() {
+    }
 }

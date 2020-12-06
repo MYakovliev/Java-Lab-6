@@ -1,5 +1,6 @@
 package by.bntu.fitr.poisit.lab06.model.service;
 
+import by.bntu.fitr.poisit.lab06.exception.InvalidRangeException;
 import com.sun.istack.internal.NotNull;
 
 
@@ -60,9 +61,9 @@ public class ArrayService {
         return sum;
     }
 
-    public int calculateQuantityInRange(@NotNull double[] array, double a, double b) {
-        if (a == b || b > a) {
-            return 0;
+    public int calculateQuantityInRange(@NotNull double[] array, double a, double b) throws InvalidRangeException {
+        if (b > a) {
+            throw new InvalidRangeException("b is greater than a");
         }
         int counter = 0;
         for (double element : array) {
