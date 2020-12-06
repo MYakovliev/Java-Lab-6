@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ArrayServiceTest {
 
+    ArrayService service = new ArrayService();
+
     @Test
     void findMaxAbsIndex() {
     }
@@ -23,10 +25,12 @@ class ArrayServiceTest {
     }
 
     @Test
-    void calculateSumAllPositive() {
+    void calculateSumAllPositive1() {
+        int expected = 25;
+        int actual = 0;
     }
 
     @Test
-    void calculateSumAfterLast() {
+    void calculateSumAfterLast1() {
     }
 }
