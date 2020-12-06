@@ -62,7 +62,7 @@ class ArrayServiceTest {
         int expected = 5;
         int actual = service.rfind(new int[]{5,1,3,4,1,1,6}, 1);
 
-        assertEquals(5, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -103,15 +103,15 @@ class ArrayServiceTest {
         try {
             int actual = service.calculateQuantityInRange(
                     new double[]{5.2 , 3.8, 1.2, 5.5, 13.3, 24.2}, 1.2, 5.5);
+            assertEquals(expected, actual);
         } catch (InvalidRangeException e) {
-            System.out.println(e.getMessage());
+            fail(e.getMessage());
         }
     }
 
     @Test
     void calculateQuantityInRange2()  {
-        Throwable thrown = assertThrows(InvalidRangeException.class, () -> {
-            service.calculateQuantityInRange(new double[]{1}, 5.5, 1.1);
-        });
+        Throwable thrown = assertThrows(InvalidRangeException.class, () ->
+                service.calculateQuantityInRange(new double[]{1}, 5.5, 1.1));
     }
 }
